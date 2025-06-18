@@ -4,7 +4,7 @@ from datetime import date
 import os
 
 
-# Status 
+# Status KLasse
 # schwarz: Kurs abgeschlossen, 
 # grün: angemeldet aber noch nicht bewertet (Note: 0.0), 
 # grau: Kurs inaktiv (Note: 0)
@@ -18,7 +18,7 @@ class Status:
         elif note != "0.0":
             return "black"
      
-# Dateimanager zum öffnen und bearbeiten der Module
+# Dateimanager KLasse zum öffnen und bearbeiten der Module
 class DateiManager:
     @staticmethod
     def datei_oeffnen():
@@ -28,7 +28,7 @@ class DateiManager:
         else:
              os.system("notepad kurse.txt")
 
-# Klasse Semester
+# Semester Klasse 
 class Semester:
     def __init__(self, master, nummer, x, y):
         self.nummer = nummer
@@ -80,7 +80,7 @@ class Semester:
         # Trennungslinie
         label_hr = tk.Label(self.rahmen, bg="white", text=("_________________________________________________"))
         label_hr.pack(pady=0)
-        
+                
         # Ausgabe der Kurse mit Punkten und Note im jeweiligen Semester-Objekt
         try:
             with open("kurse.txt", "r", encoding="utf-8") as file:
@@ -127,6 +127,7 @@ def punkte_auslesen():
         pass
     return punkte
 
+# Starten der Fensterschleife und anzeigen des Dashboard GUI
 def start_gui():
     global dashboard
     dashboard = tk.Tk()
